@@ -17,7 +17,7 @@ import {
           <Links />
         </head>
         <body>
-          <h1>Hello Remix!</h1>
+          <h1>Hello Remix-vite!</h1>
           <Outlet />
   
           <Scripts />

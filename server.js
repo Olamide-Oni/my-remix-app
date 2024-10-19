@@ -1,8 +1,6 @@
 import { createRequestHandler } from "@remix-run/express";
 import express from "express";
 
-// notice that the result of `remix vite:build` is "just a module"
-import * as build from "./build/server/index.js";
 
 const viteDevServer =
   process.env.NODE_ENV === "production"
@@ -26,7 +24,7 @@ app.use(
         "virtual:remix/server-build"
       )
   : await import("./build/server/index.js");
-  
+
 // and your app is "just a request handler"
 app.all("*", createRequestHandler({ build }));
 
